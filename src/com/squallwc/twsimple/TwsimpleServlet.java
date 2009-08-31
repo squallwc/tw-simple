@@ -83,6 +83,12 @@ public class TwsimpleServlet extends HttpServlet implements Constants{
 	        
 			int count=0;
 		    for (Status status : statuses) {
+		    	//ignore all twitter @replies
+		    	if(status.getText().charAt(0)=='@')
+		    	{
+		    		continue;
+		    	}
+		    	
 		    	if(count>MAX_FEED_ITEM_AMT)
 		    		break;
 		    	else if(count==0) //operation on latest(first item) twitter status post
