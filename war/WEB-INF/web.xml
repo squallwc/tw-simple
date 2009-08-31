@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>Twsimple</servlet-name>
+		<servlet-class>com.squallwc.twsimple.TwsimpleServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>com.squallwc.twsimple.Login</servlet-class>
+	</servlet>
+		<servlet>
+		<servlet-name>Post</servlet-name>
+		<servlet-class>com.squallwc.twsimple.Post</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Twsimple</servlet-name>
+		<url-pattern>/twsimple</url-pattern>
+	</servlet-mapping>
+	<!--
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	-->
+	<servlet-mapping>
+		<servlet-name>Post</servlet-name>
+		<url-pattern>/admin/post</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>google.htm</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+	</welcome-file-list>
+	<security-constraint>
+		<web-resource-collection>
+			<url-pattern>/admin/*</url-pattern>
+		</web-resource-collection>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+</web-app>
