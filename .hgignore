@@ -1,0 +1,6 @@
+relre:.class
+relre:.project
+relre:.jar
+relre:Thumbs.db
+glob:war/WEB-INF/appengine-generated/local_db.bin
+glob:.settings/com.google.appengine.eclipse.core.prefs
